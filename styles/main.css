@@ -55,7 +55,7 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-.number {
+.secret-number {
   background: lightsteelblue;
   color: black;
   font-size: 6rem;
@@ -68,14 +68,14 @@ h1 {
   transform: translate(-50%, 50%);
 }
 
-.between {
+.login-form {
   font-size: 1.4rem;
   position: absolute;
   top: 2rem;
   right: 2rem;
 }
 
-.guessed-num-field {
+.guess-input {
   background: none;
   border: 4px solid lightsteelblue;
   font-family: inherit;
