@@ -6,17 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
     <title>Guess my number</title>
+    <script type="module" src="scripts/index.js"></script>
   </head>
   <body>
     <header>
-      <h1>Guess my number!</h1>
-      <div class="number"></div>
-      <p class="between">(Between 1 and 20)</p>
       <button class="btn retry-btn">Retry</button>
+      <h1>Guess my number!</h1>
+      <div class="secret-number">?</div>
+      <form action="userTable" method="post" class="login-form">
+        <input type="hidden" name="action" value="insert" />
+        <label for="userame">Username </label>
+        <input type="text" name="userame" required /><br />
+        <label for="password">Password </label>
+        <input type="password" name="password" required /><br />
+        <input
+          type="submit"
+          name="submit"
+          value="Login"
+          class="btn login-btn"
+        />
+      </form>
     </header>
     <main>
       <section class="left">
-        <input type="number" class="guessed-num-field" />
+        <input type="number" min="1" max="50" class="guess-input" />
         <button class="btn check-btn">Check</button>
       </section>
       <section class="right">
@@ -24,11 +37,11 @@
         <p class="label-attempts-count">
           Attempts count: <span class="attempts-count">0</span>
         </p>
-        <p class="label-highscore">
-          Highscore: <span class="highscore">0</span>
+        <p class="label-best-global-result">
+          Best result:
+          <span class="best-global-result">-</span>
         </p>
       </section>
     </main>
-    <script src="scripts/main.js"></script>
   </body>
 </html>
