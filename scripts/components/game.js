@@ -14,10 +14,12 @@ import {
 class Game {
   secretNumber;
   attemptsCount;
+  gameOver = false;
 
   reset() {
     this.secretNumber = Math.trunc(Math.random() * 50 + 1);
     this.attemptsCount = 0;
+    this.gameOver = false;
 
     document.querySelector(SECRET_NUMBER_SELECTOR).textContent =
       DEFAULT_SECRET_NUMBER;
@@ -45,6 +47,7 @@ class Game {
 
     // Correct guess.
     if (guess === this.secretNumber) {
+      this.gameOver = true;
       document.querySelector(SECRET_NUMBER_SELECTOR).textContent =
         this.secretNumber;
       document.querySelector(SECRET_NUMBER_SELECTOR).style.backgroundColor =

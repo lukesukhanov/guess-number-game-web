@@ -6,6 +6,8 @@ class CheckBtn {
   }
 
   static handleClick() {
-    window.game.checkGuess();
+    if (!window.game.gameOver) {
+      window.game.checkGuess();
+    }
   }
 }

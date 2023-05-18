@@ -68,11 +68,15 @@ h1 {
   transform: translate(-50%, 50%);
 }
 
-.login-form {
+.sign-in {
   font-size: 1.4rem;
   position: absolute;
   top: 2rem;
   right: 2rem;
+}
+
+.sign-in-form {
+  border: "3px solid";
 }
 
 .guess-input {

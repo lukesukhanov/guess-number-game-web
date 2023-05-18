@@ -1,7 +1,7 @@
 export { BestGlobalResult };
 
 import {
-  PLAYER_WITH_BEST_RESULT_URL,
+  PLAYERS_WITH_BEST_RESULT_URL,
   ORIGIN_URL,
   REFRESH_PERIOD,
   DEFAULT_BEST_GLOBAL_RESULT,
@@ -9,8 +9,8 @@ import {
 
 class BestGlobalResult {
   constructor(element) {
-    BestGlobalResult.refreshBestGlobalResult(element);
-    setInterval(BestGlobalResult.refreshBestGlobalResult, REFRESH_PERIOD);
+    // BestGlobalResult.refreshBestGlobalResult(element);
+    // setInterval(BestGlobalResult.refreshBestGlobalResult, REFRESH_PERIOD);
   }
 
   static async refreshBestGlobalResult(element) {
@@ -23,7 +23,7 @@ class BestGlobalResult {
   }
 
   static async fetchPlayerWithBestGlobalResult() {
-    const response = await fetch(PLAYER_WITH_BEST_RESULT_URL, {
+    const response = await fetch(PLAYERS_WITH_BEST_RESULT_URL, {
       Origin: ORIGIN_URL,
     });
     const playerWithBestResult = await response.json();

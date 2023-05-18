@@ -13,19 +13,16 @@
       <button class="btn retry-btn">Retry</button>
       <h1>Guess my number!</h1>
       <div class="secret-number">?</div>
-      <form action="userTable" method="post" class="login-form">
-        <input type="hidden" name="action" value="insert" />
-        <label for="userame">Username </label>
-        <input type="text" name="userame" required /><br />
-        <label for="password">Password </label>
-        <input type="password" name="password" required /><br />
-        <input
-          type="submit"
-          name="submit"
-          value="Login"
-          class="btn login-btn"
-        />
-      </form>
+      <section class="sign-in">
+        <form method="post" class="sign-in-form">
+          <label for="userame">Username </label>
+          <input type="text" name="username" required /><br />
+          <label for="password">Password </label>
+          <input type="password" name="password" required /><br />
+        </form>
+        <button type="button" class="btn sign-in-btn">Sign in</button>
+        <button type="button" class="btn sign-up-btn">Sign up</button>
+      </section>
     </header>
     <main>
       <section class="left">
