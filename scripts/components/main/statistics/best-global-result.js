@@ -14,26 +14,26 @@ class BestGlobalResult {
   }
 
   static async refreshBestGlobalResult(element) {
-    playerWithBestResult =
-      await BestGlobalResult.fetchPlayerWithBestGlobalResult();
+    playersWithBestResult =
+      await BestGlobalResult.fetchPlayersWithBestGlobalResult();
     BestGlobalResult.refreshBestGlobalResultOnPage(
       element,
-      playerWithBestResult
+      playersWithBestResult
     );
   }
 
-  static async fetchPlayerWithBestGlobalResult() {
+  static async fetchPlayersWithBestGlobalResult() {
     const response = await fetch(PLAYERS_WITH_BEST_RESULT_URL, {
       Origin: ORIGIN_URL,
     });
-    const playerWithBestResult = await response.json();
-    return playerWithBestResult;
+    const playersWithBestResult = await response.json();
+    return playersWithBestResult;
   }
 
-  static refreshBestGlobalResultOnPage(element, playerWithBestResult) {
-    if (playerWithBestResult) {
-      const username = playerWithBestResult.username;
-      const bestAttemptsCount = playerWithBestResult.bestAttemptsCount;
+  static refreshBestGlobalResultOnPage(element, playersWithBestResult) {
+    if (playersWithBestResult) {
+      const username = playersWithBestResult.username;
+      const bestAttemptsCount = playersWithBestResult.bestAttemptsCount;
       element.textContent = `${bestAttemptsCount} (${username})`;
     } else {
       element.textContent = DEFAULT_BEST_GLOBAL_RESULT;

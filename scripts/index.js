@@ -1,40 +1,48 @@
-import {
-  BEST_GLOBAL_RESULT_SELECTOR,
-  CHECK_BTN_SELECTOR,
-  RETRY_BTN_SELECTOR,
-  SIGN_IN_BTN_SELECTOR,
-  GUESS_INPUT_SELECTOR,
-} from "/scripts/properties.js";
-import { BestGlobalResult } from "/scripts/components/best-global-result.js";
-import { CheckBtn } from "/scripts/components/check-btn.js";
-import { RetryBtn } from "/scripts/components/retry-btn.js";
-import { SignInBtn } from "/scripts/components/sign-in-btn.js";
-import { GuessInput } from "/scripts/components/guess-input.js";
-import { Game } from "/scripts/components/game.js";
+import { NewGameButton } from "/scripts/components/header/new-game/new-game-button.js";
+import { LogInButton } from "/scripts/components/header/authorization/log-in-button.js";
+import { RegisterButton } from "/scripts/components/header/authorization/register-button.js";
+import { PopUpRegisterButton } from "/scripts/components/pop-up/registration-form/pop-up-register-button.js";
+import { GuessInput } from "/scripts/components/main/guess/guess-input.js";
+import { CheckButton } from "/scripts/components/main/guess/check-button.js";
+import { BestGlobalResult } from "/scripts/components/main/statistics/best-global-result.js";
+import { PopUpBg } from "/scripts/components/pop-up/pop-up-bg.js";
+import { Game } from "/scripts/game.js";
 
 window.game = new Game();
 window.game.reset();
 
 const components = [
   {
+    class: NewGameButton,
+    selector: ".new-game__button",
+  },
+  {
     class: BestGlobalResult,
-    selector: BEST_GLOBAL_RESULT_SELECTOR,
+    selector: ".statistics__best-global-result__value",
   },
   {
-    class: CheckBtn,
-    selector: CHECK_BTN_SELECTOR,
-  },
-  {
-    class: RetryBtn,
-    selector: RETRY_BTN_SELECTOR,
+    class: CheckButton,
+    selector: ".guess__check-button",
   },
   {
     class: GuessInput,
-    selector: GUESS_INPUT_SELECTOR,
+    selector: ".guess__input",
   },
   {
-    class: SignInBtn,
-    selector: SIGN_IN_BTN_SELECTOR,
+    class: LogInButton,
+    selector: ".authorization__log-in-button",
+  },
+  {
+    class: RegisterButton,
+    selector: ".authorization__register-button",
+  },
+  {
+    class: PopUpRegisterButton,
+    selector: ".registration-form__button",
+  },
+  {
+    class: PopUpBg,
+    selector: ".pop-up-bg",
   },
 ];
 
