@@ -1,5 +1,6 @@
 import { NewGameButton } from "/scripts/components/header/new-game/new-game-button.js";
-import { LogInButton } from "/scripts/components/header/authorization/log-in-button.js";
+import { LoginButton } from "/scripts/components/header/authorization/login-button.js";
+import { PopUpLoginButton } from "/scripts/components/pop-up/login-form/pop-up-login-button.js";
 import { RegisterButton } from "/scripts/components/header/authorization/register-button.js";
 import { PopUpRegisterButton } from "/scripts/components/pop-up/registration-form/pop-up-register-button.js";
 import { GuessInput } from "/scripts/components/main/guess/guess-input.js";
@@ -29,8 +30,12 @@ const components = [
     selector: ".guess__input",
   },
   {
-    class: LogInButton,
+    class: LoginButton,
     selector: ".authorization__log-in-button",
+  },
+  {
+    class: PopUpLoginButton,
+    selector: ".login-form__button",
   },
   {
     class: RegisterButton,

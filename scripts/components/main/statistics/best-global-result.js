@@ -3,21 +3,27 @@ export { BestGlobalResult };
 import {
   PLAYERS_WITH_BEST_RESULT_URL,
   ORIGIN_URL,
-  REFRESH_PERIOD,
+  BEST_GLOBAL_RESULT_REFRESH_PERIOD,
   DEFAULT_BEST_GLOBAL_RESULT,
 } from "/scripts/properties.js";
 
 class BestGlobalResult {
+  static bestGlobalResultElement;
+
   constructor(element) {
-    // BestGlobalResult.refreshBestGlobalResult(element);
-    // setInterval(BestGlobalResult.refreshBestGlobalResult, REFRESH_PERIOD);
+    BestGlobalResult.refreshBestGlobalResult(element);
+    BestGlobalResult.bestGlobalResultElement = element;
+    setInterval(
+      BestGlobalResult.refreshBestGlobalResult,
+      BEST_GLOBAL_RESULT_REFRESH_PERIOD
+    );
   }
 
-  static async refreshBestGlobalResult(element) {
-    playersWithBestResult =
+  static async refreshBestGlobalResult() {
+    const playersWithBestResult =
       await BestGlobalResult.fetchPlayersWithBestGlobalResult();
     BestGlobalResult.refreshBestGlobalResultOnPage(
-      element,
+      BestGlobalResult.bestGlobalResultElement,
       playersWithBestResult
     );
   }
@@ -30,13 +36,17 @@ class BestGlobalResult {
     return playersWithBestResult;
   }
 
-  static refreshBestGlobalResultOnPage(element, playersWithBestResult) {
-    if (playersWithBestResult) {
-      const username = playersWithBestResult.username;
-      const bestAttemptsCount = playersWithBestResult.bestAttemptsCount;
-      element.textContent = `${bestAttemptsCount} (${username})`;
+  static refreshBestGlobalResultOnPage(
+    bestGlobalResultElement,
+    playersWithBestResult
+  ) {
+    if (playersWithBestResult.length) {
+      const player = playersWithBestResult[0];
+      const username = player.username;
+      const bestAttemptsCount = player.bestAttemptsCount;
+      bestGlobalResultElement.textContent = `${bestAttemptsCount} (${username})`;
     } else {
-      element.textContent = DEFAULT_BEST_GLOBAL_RESULT;
+      bestGlobalResultElement.textContent = DEFAULT_BEST_GLOBAL_RESULT;
     }
   }
 }

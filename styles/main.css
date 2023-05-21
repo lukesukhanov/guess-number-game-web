@@ -204,10 +204,15 @@ header .main-header {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.8rem;
   border: 0.2rem solid cadetblue;
   background: cadetblue;
   cursor: pointer;
   text-transform: uppercase;
+  transition: 0.3s all;
+}
+
+.pop-up-form button:hover {
+  color: cadetblue;
+  background-color: white;
   transition: 0.3s all;
 }
