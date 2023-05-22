@@ -100,7 +100,8 @@ header .main-header {
   color: cadetblue;
 }
 
-.after-authorization__log-out-ref {
+.after-authorization__logout-ref {
+  color: cadetblue;
   margin-left: 1rem;
 }
 
@@ -207,7 +208,6 @@ header .main-header {
   border: 0.2rem solid cadetblue;
   background: cadetblue;
   cursor: pointer;
-  text-transform: uppercase;
   transition: 0.3s all;
 }
 

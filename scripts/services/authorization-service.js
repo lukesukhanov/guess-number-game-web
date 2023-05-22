@@ -4,18 +4,56 @@ import { PlayerService } from "/scripts/services/player-service.js";
 import {
   REGISTER_API_URL,
   LOGIN_API_URL,
+  LOGOUT_API_URL,
   ORIGIN_URL,
 } from "/scripts/properties.js";
 
 class AuthorizationService {
   static async login(username, password) {
+    const headers = {
+      "Content-Type": "application/json",
+      Origin: ORIGIN_URL,
+    };
+    if (username && password) {
+      headers.Authorization = "Basic " + btoa(username + ":" + password);
+    }
     const response = await fetch(LOGIN_API_URL, {
+      method: "POST",
+      mode: "cors",
+      credentials: "include",
+      headers: headers,
+      redirect: "manual",
+      referrerPolicy: "no-referrer",
+    });
+    switch (response.status) {
+      case 200:
+        const responseBody = await response.json();
+        const fetchedUsername = responseBody.username;
+        if (fetchedUsername === "anonymousUser") {
+          return;
+        }
+        window.player = await PlayerService.getByUsername(fetchedUsername);
+        document.querySelector(".authorization").style.display = "none";
+        document.querySelector(
+          ".after-authorization__username"
+        ).textContent = `(${fetchedUsername})`;
+        document.querySelector(".after-authorization").style.display = "flex";
+        break;
+      case 401:
+        if (username) {
+          alert(`Wrong login or password`);
+        }
+        break;
+    }
+  }
+
+  static async logout() {
+    const response = await fetch(LOGOUT_API_URL, {
       method: "POST",
       mode: "cors",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Basic " + btoa(username + ":" + password),
         Origin: ORIGIN_URL,
       },
       redirect: "manual",
@@ -23,15 +61,10 @@ class AuthorizationService {
     });
     switch (response.status) {
       case 200:
-        window.player = await PlayerService.getByUsername(username);
-        document.querySelector(".authorization").style.display = "none";
-        document.querySelector(
-          ".after-authorization__username"
-        ).textContent = `(${username})`;
-        document.querySelector(".after-authorization").style.display = "flex";
-        break;
-      case 401:
-        alert(`Wrong login or password`);
+        document.querySelector(".after-authorization").style.display = "none";
+        document.querySelector(".after-authorization__username").textContent =
+          null;
+        document.querySelector(".authorization").style.display = "block";
         break;
     }
   }
