@@ -10,38 +10,117 @@
   </head>
   <body>
     <header>
-      <button class="btn retry-btn">Retry</button>
-      <h1>Guess my number!</h1>
+      <section class="new-game">
+        <button class="new-game__button">New game</button>
+      </section>
+
+      <section class="main-header">
+        <h1>Guess my number!</h1>
+        <br />
+        <h4>(from 1 to 50)</h4>
+      </section>
+
       <div class="secret-number">?</div>
-      <form action="userTable" method="post" class="login-form">
-        <input type="hidden" name="action" value="insert" />
-        <label for="userame">Username </label>
-        <input type="text" name="userame" required /><br />
-        <label for="password">Password </label>
-        <input type="password" name="password" required /><br />
-        <input
-          type="submit"
-          name="submit"
-          value="Login"
-          class="btn login-btn"
-        />
-      </form>
+
+      <section class="authorization">
+        <button type="button" class="authorization__log-in-button">
+          Log in
+        </button>
+
+        <button type="button" class="authorization__register-button">
+          Register
+        </button>
+      </section>
+
+      <section class="after-authorization">
+        <div class="after-authorization__username"></div>
+        <a href="index.html" , class="after-authorization__logout-ref"
+          >Log out</a
+        >
+      </section>
     </header>
     <main>
-      <section class="left">
-        <input type="number" min="1" max="50" class="guess-input" />
-        <button class="btn check-btn">Check</button>
+      <section class="guess">
+        <input type="number" min="1" max="50" class="guess__input" />
+        <button class="guess__check-button">Check</button>
       </section>
-      <section class="right">
-        <p class="message"></p>
-        <p class="label-attempts-count">
-          Attempts count: <span class="attempts-count">0</span>
+      <section class="statistics">
+        <p class="statistics__message">Start guessing...</p>
+        <p class="statistics__attempts-count">
+          Attempts count:
+          <span class="statistics__attempts-count__value">0</span>
         </p>
-        <p class="label-best-global-result">
+        <p class="statistics__best-global-result">
           Best result:
-          <span class="best-global-result">-</span>
+          <span class="statistics__best-global-result__value">-</span>
         </p>
       </section>
+
+      <!-- Pop-up -->
+
+      <div class="pop-up-bg"></div>
+
+      <form class="registration-form pop-up-form">
+        <div class="registration-form__username form-row">
+          <label for="username" class="registration-form__username__label"
+            >Username</label
+          >
+          <input
+            type="text"
+            name="username"
+            class="registration-form__username__input"
+          />
+        </div>
+        <div class="registration-form__password form-row">
+          <label for="password" class="registration-form__password__label"
+            >Password</label
+          >
+          <input
+            type="password"
+            name="password"
+            class="registration-form__password__input"
+          />
+        </div>
+        <div class="registration-form__repeated-password form-row">
+          <label
+            for="repeated-password"
+            class="registration-form__repeated-password__label"
+            >Repeat password</label
+          >
+          <input
+            type="password"
+            name="repeated-password"
+            class="registration-form__repeated-password__input"
+          />
+        </div>
+        <button type="submit" class="registration-form__button">
+          Register
+        </button>
+      </form>
+
+      <form class="login-form pop-up-form">
+        <div class="login-form__username form-row">
+          <label for="username" class="login-form__username__label"
+            >Username</label
+          >
+          <input
+            type="text"
+            name="username"
+            class="login-form__username__input"
+          />
+        </div>
+        <div class="login-form__password form-row">
+          <label for="password" class="login-form__password__label"
+            >Password</label
+          >
+          <input
+            type="password"
+            name="password"
+            class="login-form__password__input"
+          />
+        </div>
+        <button type="submit" class="login-form__button">Log in</button>
+      </form>
     </main>
   </body>
 </html>
