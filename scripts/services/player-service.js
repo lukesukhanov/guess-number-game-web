@@ -1,6 +1,6 @@
 export { PlayerService };
 
-import { PLAYERS_API_URL, ORIGIN_URL } from "/scripts/properties.js";
+import { PLAYERS_API_URL } from "/scripts/properties.js";
 import { Player } from "/scripts/player.js";
 
 class PlayerService {
@@ -10,12 +10,10 @@ class PlayerService {
       method: "GET",
       mode: "cors",
       credentials: "include",
+      cache: "no-store",
       headers: {
         "Content-Type": "application/json",
-        Origin: ORIGIN_URL,
       },
-      redirect: "manual",
-      referrerPolicy: "no-referrer",
     });
     switch (response.status) {
       case 200:
@@ -48,13 +46,11 @@ class PlayerService {
       method: "PUT",
       mode: "cors",
       credentials: "include",
+      cache: "no-store",
       headers: {
         "Content-Type": "application/json",
-        Origin: ORIGIN_URL,
       },
       body: JSON.stringify(player),
-      redirect: "manual",
-      referrerPolicy: "no-referrer",
     });
   }
 }

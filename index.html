@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="icon" href="favicon.ico" />
     <title>Guess my number</title>
     <script type="module" src="scripts/index.js"></script>
   </head>
@@ -34,14 +35,12 @@
 
       <section class="after-authorization">
         <div class="after-authorization__username"></div>
-        <a href="index.html" , class="after-authorization__logout-ref"
-          >Log out</a
-        >
+        <a href="index.html" class="after-authorization__logout-ref">Log out</a>
       </section>
     </header>
     <main>
       <section class="guess">
-        <input type="number" min="1" max="50" class="guess__input" />
+        <input type="number" class="guess__input" />
         <button class="guess__check-button">Check</button>
       </section>
       <section class="statistics">
