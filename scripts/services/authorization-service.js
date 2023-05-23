@@ -5,14 +5,12 @@ import {
   REGISTER_API_URL,
   LOGIN_API_URL,
   LOGOUT_API_URL,
-  ORIGIN_URL,
 } from "/scripts/properties.js";
 
 class AuthorizationService {
   static async login(username, password) {
     const headers = {
       "Content-Type": "application/json",
-      Origin: ORIGIN_URL,
     };
     if (username && password) {
       headers.Authorization = "Basic " + btoa(username + ":" + password);
@@ -21,9 +19,8 @@ class AuthorizationService {
       method: "POST",
       mode: "cors",
       credentials: "include",
+      cache: "no-store",
       headers: headers,
-      redirect: "manual",
-      referrerPolicy: "no-referrer",
     });
     switch (response.status) {
       case 200:
@@ -52,12 +49,10 @@ class AuthorizationService {
       method: "POST",
       mode: "cors",
       credentials: "include",
+      cache: "no-store",
       headers: {
         "Content-Type": "application/json",
-        Origin: ORIGIN_URL,
       },
-      redirect: "manual",
-      referrerPolicy: "no-referrer",
     });
     switch (response.status) {
       case 200:
@@ -78,12 +73,10 @@ class AuthorizationService {
       method: "POST",
       mode: "cors",
       credentials: "omit",
+      cache: "no-store",
       headers: {
         "Content-Type": "application/json",
-        Origin: ORIGIN_URL,
       },
-      redirect: "manual",
-      referrerPolicy: "no-referrer",
       body: JSON.stringify(requestBody),
     });
     switch (response.status) {
