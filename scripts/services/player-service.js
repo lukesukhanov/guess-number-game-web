@@ -9,10 +9,10 @@ class PlayerService {
     const response = await fetch(url, {
       method: "GET",
       mode: "cors",
-      credentials: "include",
+      credentials: "omit",
       cache: "no-store",
       headers: {
-        "Content-Type": "application/json",
+        Accept: "application/json",
       },
     });
     switch (response.status) {
@@ -25,7 +25,7 @@ class PlayerService {
         );
       case 404:
         console.error(`Can't find player with username '${username}'`);
-        break;
+        return null;
     }
   }
 
@@ -34,21 +34,22 @@ class PlayerService {
     if (!player) {
       return;
     }
-    const savedPlayer = PlayerService.getByUsername(player.username);
+    const fetchedPlayer = await PlayerService.getByUsername(player.username);
     if (
-      savedPlayer.bestAttemptsCount &&
-      player.bestAttemptsCount >= savedPlayer.bestAttemptsCount
+      fetchedPlayer.bestAttemptsCount &&
+      player.bestAttemptsCount >= fetchedPlayer.bestAttemptsCount
     ) {
       return;
     }
-    const url = PLAYERS_API_URL + `/${player.id}`;
-    await fetch(url, {
+    const csrfToken = window.localStorage.getItem("csrfToken");
+    await fetch(PLAYERS_API_URL + `/${player.id}`, {
       method: "PUT",
       mode: "cors",
       credentials: "include",
       cache: "no-store",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json; charset=utf-8",
+        "X-CSRF-TOKEN": csrfToken,
       },
       body: JSON.stringify(player),
     });

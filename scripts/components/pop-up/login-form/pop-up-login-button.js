@@ -17,10 +17,12 @@ class PopUpLoginButton {
     const loginForm = document.querySelector(".login-form");
     const usernameInput = loginForm.elements["username"];
     const passwordInput = loginForm.elements["password"];
-    const username = usernameInput.value;
+    const username = usernameInput.value.trim();
     const password = passwordInput.value;
     if (PopUpLoginButton.validateInput(usernameInput, passwordInput)) {
-      AuthorizationService.login(username.trim(), password);
+      AuthorizationService.loginWithPassword(username, password).then(() =>
+        AuthorizationService.fetchCsrfToken()
+      );
       popupBg.classList.remove("active");
       loginForm.classList.remove("active");
     }

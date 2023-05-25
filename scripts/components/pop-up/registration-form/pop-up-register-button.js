@@ -14,11 +14,11 @@ class PopUpRegisterButton {
     event.preventDefault();
     const popupBg = document.querySelector(".pop-up-bg");
     const registrationForm = document.querySelector(".registration-form");
-    const elements = registrationForm.elements;
-    const usernameInput = elements["username"];
-    const passwordInput = elements["password"];
-    const repeatedPasswordInput = elements["repeated-password"];
-    const username = usernameInput.value;
+    const usernameInput = registrationForm.elements["username"];
+    const passwordInput = registrationForm.elements["password"];
+    const repeatedPasswordInput =
+      registrationForm.elements["repeated-password"];
+    const username = usernameInput.value.trim();
     const password = passwordInput.value;
     if (
       PopUpRegisterButton.validateInput(
@@ -27,7 +27,7 @@ class PopUpRegisterButton {
         repeatedPasswordInput
       )
     ) {
-      AuthorizationService.register(username.trim(), password);
+      AuthorizationService.register(username, password);
       popupBg.classList.remove("active");
       registrationForm.classList.remove("active");
     }
