@@ -47,7 +47,7 @@ class AuthorizationService {
 
   static async handleLoginResponse(response) {
     if (response.status === 401) {
-      alert(`Wrong login or password`);
+      alert(`Invalid username or password`);
       return;
     }
     const responseBody = await response.json();
@@ -117,20 +117,15 @@ class AuthorizationService {
   }
 
   static async requestRegister(username, password) {
-    const requestBody = {
-      username: username,
-      password: btoa(password),
-    };
     return await fetch(REGISTER_API_URL, {
       method: "POST",
       mode: "cors",
       credentials: "omit",
       cache: "no-store",
       headers: {
-        "Content-Type": "application/json; charset=utf-8",
         Accept: "application/json",
+        Authorization: btoa(username + ":" + password),
       },
-      body: JSON.stringify(requestBody),
     });
   }
 
