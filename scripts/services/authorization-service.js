@@ -46,14 +46,15 @@ class AuthorizationService {
   }
 
   static async handleLoginResponse(response) {
-    if (response.status === 401) {
-      alert(`Invalid username or password`);
-      return;
-    }
-    const responseBody = await response.json();
-    const username = responseBody.username;
-    if (username !== "anonymousUser") {
-      await AuthorizationService.handleSuccessfulLogin(username);
+    switch (response.status) {
+      case 200:
+        const responseBody = await response.json();
+        const username = responseBody.username;
+        await AuthorizationService.handleSuccessfulLogin(username);
+        break;
+      case 401:
+        alert(`Invalid username or password`);
+        break;
     }
   }
 
