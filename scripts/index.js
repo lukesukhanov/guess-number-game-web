@@ -14,9 +14,7 @@ import { AuthorizationService } from "/scripts/services/authorization-service.js
 window.game = new Game();
 window.game.reset();
 
-AuthorizationService.loginWithSessionCookie().then(() =>
-  AuthorizationService.fetchCsrfToken()
-);
+AuthorizationService.loginWithSessionCookie();
 
 const components = [
   {
