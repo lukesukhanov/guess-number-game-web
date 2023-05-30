@@ -1,6 +1,9 @@
 export { PlayerService };
 
-import { PLAYERS_API_URL } from "/scripts/properties.js";
+import {
+  PLAYERS_API_URL,
+  PLAYERS_WITH_BEST_RESULT_URL,
+} from "/scripts/properties.js";
 import { Player } from "/scripts/player.js";
 
 class PlayerService {
@@ -25,6 +28,28 @@ class PlayerService {
         );
       case 404:
         console.error(`Can't find player with username '${username}'`);
+        return null;
+    }
+  }
+
+  static async getPlayersWithBestResult() {
+    const response = await fetch(PLAYERS_WITH_BEST_RESULT_URL, {
+      method: "GET",
+      mode: "cors",
+      credentials: "omit",
+      cache: "no-store",
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    switch (response.status) {
+      case 200:
+        const responseBody = await response.json();
+        const playersWithBestResult = [];
+        responseBody.forEach((player) => playersWithBestResult.push(player));
+        return playersWithBestResult;
+      case 404:
+        console.error(`Can't find player with best result`);
         return null;
     }
   }

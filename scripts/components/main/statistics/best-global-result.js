@@ -1,5 +1,6 @@
 export { BestGlobalResult };
 
+import { PlayerService } from "/scripts/services/player-service.js";
 import {
   PLAYERS_WITH_BEST_RESULT_URL,
   BEST_GLOBAL_RESULT_REFRESH_PERIOD,
@@ -10,8 +11,8 @@ class BestGlobalResult {
   static bestGlobalResultElement;
 
   constructor(element) {
-    BestGlobalResult.refreshBestGlobalResult(element);
     BestGlobalResult.bestGlobalResultElement = element;
+    BestGlobalResult.refreshBestGlobalResult();
     setInterval(
       BestGlobalResult.refreshBestGlobalResult,
       BEST_GLOBAL_RESULT_REFRESH_PERIOD
@@ -20,27 +21,20 @@ class BestGlobalResult {
 
   static async refreshBestGlobalResult() {
     const playersWithBestResult =
-      await BestGlobalResult.fetchPlayersWithBestGlobalResult();
+      await PlayerService.getPlayersWithBestResult();
     BestGlobalResult.refreshBestGlobalResultOnPage(
       BestGlobalResult.bestGlobalResultElement,
       playersWithBestResult
     );
   }
 
-  static async fetchPlayersWithBestGlobalResult() {
-    const response = await fetch(PLAYERS_WITH_BEST_RESULT_URL);
-    const playersWithBestResult = await response.json();
-    return playersWithBestResult;
-  }
-
   static refreshBestGlobalResultOnPage(
     bestGlobalResultElement,
     playersWithBestResult
   ) {
-    if (playersWithBestResult.length) {
-      const player = playersWithBestResult[0];
-      const username = player.username;
-      const bestAttemptsCount = player.bestAttemptsCount;
+    if (playersWithBestResult[0]) {
+      const username = playersWithBestResult[0].username;
+      const bestAttemptsCount = playersWithBestResult[0].bestAttemptsCount;
       bestGlobalResultElement.textContent = `${bestAttemptsCount} (${username})`;
     } else {
       bestGlobalResultElement.textContent = DEFAULT_BEST_GLOBAL_RESULT;
