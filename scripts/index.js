@@ -17,52 +17,52 @@ window.game.reset();
 AuthorizationService.loginWithSessionCookie();
 
 const components = [
-  {
-    class: NewGameButton,
-    selector: ".new-game__button",
-  },
-  {
-    class: BestGlobalResult,
-    selector: ".statistics__best-global-result__value",
-  },
-  {
-    class: CheckButton,
-    selector: ".guess__check-button",
-  },
-  {
-    class: GuessInput,
-    selector: ".guess__input",
-  },
-  {
-    class: LoginButton,
-    selector: ".authorization__log-in-button",
-  },
-  {
-    class: PopUpLoginButton,
-    selector: ".login-form__button",
-  },
-  {
-    class: RegisterButton,
-    selector: ".authorization__register-button",
-  },
-  {
-    class: PopUpRegisterButton,
-    selector: ".registration-form__button",
-  },
-  {
-    class: LogOutRef,
-    selector: ".after-authorization__logout-ref",
-  },
-  {
-    class: PopUpBg,
-    selector: ".pop-up-bg",
-  },
+	{
+		class: NewGameButton,
+		selector: ".new-game__button",
+	},
+	{
+		class: BestGlobalResult,
+		selector: ".statistics__best-global-result__value",
+	},
+	{
+		class: CheckButton,
+		selector: ".guess__check-button",
+	},
+	{
+		class: GuessInput,
+		selector: ".guess__input",
+	},
+	{
+		class: LoginButton,
+		selector: ".authorization__log-in-button",
+	},
+	{
+		class: PopUpLoginButton,
+		selector: ".login-form__button",
+	},
+	{
+		class: RegisterButton,
+		selector: ".authorization__register-button",
+	},
+	{
+		class: PopUpRegisterButton,
+		selector: ".registration-form__button",
+	},
+	{
+		class: LogOutRef,
+		selector: ".after-authorization__logout-ref",
+	},
+	{
+		class: PopUpBg,
+		selector: ".pop-up-bg",
+	},
 ];
 
-components.forEach((component) => {
-  if (document.querySelector(component.selector)) {
-    document
-      .querySelectorAll(component.selector)
-      .forEach((element) => new component.class(element, component.options));
-  }
+components.forEach(component => {
+	if (document.querySelector(component.selector)) {
+		document
+			.querySelectorAll(component.selector)
+			.forEach(element => new component.class(element, component.options));
+	}
 });
