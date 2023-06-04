@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: black;
+  background-color: white;
+}
+
+/* Body */
+
+header {
+  position: relative;
+  height: 42vh;
+  border-bottom: 0.7rem solid cadetblue;
+}
+
+main {
+  height: 58vh;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Elements */
+
+button {
+  padding: 2rem 3rem;
+  color: white;
+  font-size: 1.5rem;
+  font-family: inherit;
+  background-color: cadetblue;
+  border: 0.2rem solid cadetblue;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+button:hover {
+  color: cadetblue;
+  background-color: white;
+  transition: 0.3s all;
+}
+
+/* Header */
+
+.new-game {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+header .main-header {
+  position: absolute;
+  width: 100%;
+  top: 52%;
+  left: 50%;
+  font-size: 2.2rem;
+  text-align: center;
+  color: cadetblue;
+  transform: translate(-50%, -50%);
+}
+
+.secret-number {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 15rem;
+  padding: 3rem 0rem;
+  color: white;
+  text-align: center;
+  font-size: 6rem;
+  background-color: cadetblue;
+  transform: translate(-50%, 50%);
+}
+
+.authorization {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.after-authorization {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: none;
+  flex-direction: row;
+  font-size: 2rem;
+  color: cadetblue;
+}
+
+.after-authorization__logout-ref {
+  color: cadetblue;
+  margin-left: 1rem;
+}
+
+/* Main */
+
+.guess {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guess__input {
+  width: 22rem;
+  background: none;
+  border: 0.2rem solid cadetblue;
+  font-family: inherit;
+  color: inherit;
+  font-size: 5rem;
+  padding: 2.5rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.statistics {
+  width: 40%;
+  font-size: 2rem;
+  color: cadetblue;
+}
+
+.statistics__message {
+  margin-bottom: 4rem;
+  height: 3rem;
+}
+
+.statistics__attempts-count {
+  margin-bottom: 2rem;
+}
+
+/* Pop-up background */
+
+.pop-up-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s all;
+}
+
+.pop-up-bg.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.3s all;
+}
+
+/* Pop-up form */
+
+.pop-up-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 40rem;
+  padding: 2.5rem;
+  transition: 0.3s all;
+}
+
+.pop-up-form.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.3s all;
+}
+
+.pop-up-form .form-row {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.pop-up-form input {
+  height: 3.5rem;
+  font-size: 1.8rem;
+  border: none;
+  outline: none;
+  border-bottom: 0.1rem solid #cfd0d3;
+  margin-bottom: 0.4rem;
+}
+
+.pop-up-form input:focus {
+  border-bottom: 0.1rem solid cadetblue;
+}
+
+.pop-up-form button {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: 0.2rem solid cadetblue;
+  background: cadetblue;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.pop-up-form button:hover {
+  color: cadetblue;
+  background-color: white;
+  transition: 0.3s all;
+}
