@@ -1,13 +1,13 @@
 export { Player };
 
 class Player {
-	id;
-	username;
-	bestAttemptsCount;
+  id;
+  username;
+  bestAttemptsCount;
 
-	constructor(id, username, bestAttemptsCount) {
-		this.id = id;
-		this.username = username;
-		this.bestAttemptsCount = bestAttemptsCount;
-	}
+  constructor(id, username, bestAttemptsCount) {
+    this.id = id;
+    this.username = username;
+    this.bestAttemptsCount = bestAttemptsCount;
+  }
 }
