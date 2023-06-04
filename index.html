@@ -1,92 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="styles/main.css" />
-		<link rel="icon" href="favicon.ico" />
-		<title>Guess my number</title>
-		<script type="module" src="scripts/index.js"></script>
-	</head>
-	<body>
-		<header>
-			<section class="new-game">
-				<button class="new-game__button">New game</button>
-			</section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="icon" href="favicon.ico" />
+    <title>Guess my number</title>
+    <script type="module" src="scripts/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <section class="new-game">
+        <button class="new-game__button">New game</button>
+      </section>
 
-			<section class="main-header">
-				<h1>Guess my number!</h1>
-				<br />
-				<h4>(from 1 to 50)</h4>
-			</section>
+      <section class="main-header">
+        <h1>Guess my number!</h1>
+        <br />
+        <h4>(from 1 to 50)</h4>
+      </section>
 
-			<div class="secret-number">?</div>
+      <div class="secret-number">?</div>
 
-			<section class="authorization">
-				<button type="button" class="authorization__log-in-button">Log in</button>
+      <section class="authorization">
+        <button type="button" class="authorization__log-in-button">Log in</button>
 
-				<button type="button" class="authorization__register-button">Register</button>
-			</section>
+        <button type="button" class="authorization__register-button">Register</button>
+      </section>
 
-			<section class="after-authorization">
-				<div class="after-authorization__username"></div>
-				<a href="index.html" class="after-authorization__logout-ref">Log out</a>
-			</section>
-		</header>
-		<main>
-			<section class="guess">
-				<input type="number" class="guess__input" />
-				<button class="guess__check-button">Check</button>
-			</section>
-			<section class="statistics">
-				<p class="statistics__message">Start guessing...</p>
-				<p class="statistics__attempts-count">
-					Attempts count:
-					<span class="statistics__attempts-count__value">0</span>
-				</p>
-				<p class="statistics__best-global-result">
-					Best result:
-					<span class="statistics__best-global-result__value">-</span>
-				</p>
-			</section>
+      <section class="after-authorization">
+        <div class="after-authorization__username"></div>
+        <a href="index.html" class="after-authorization__logout-ref">Log out</a>
+      </section>
+    </header>
+    <main>
+      <section class="guess">
+        <input type="number" class="guess__input" />
+        <button class="guess__check-button">Check</button>
+      </section>
+      <section class="statistics">
+        <p class="statistics__message">Start guessing...</p>
+        <p class="statistics__attempts-count">
+          Attempts count:
+          <span class="statistics__attempts-count__value">0</span>
+        </p>
+        <p class="statistics__best-global-result">
+          Best result:
+          <span class="statistics__best-global-result__value">-</span>
+        </p>
+      </section>
 
-			<!-- Pop-up -->
+      <!-- Pop-up -->
 
-			<div class="pop-up-bg"></div>
+      <div class="pop-up-bg"></div>
 
-			<form class="registration-form pop-up-form">
-				<div class="registration-form__username form-row">
-					<label for="username" class="registration-form__username__label">Username</label>
-					<input type="text" name="username" class="registration-form__username__input" />
-				</div>
-				<div class="registration-form__password form-row">
-					<label for="password" class="registration-form__password__label">Password</label>
-					<input type="password" name="password" class="registration-form__password__input" />
-				</div>
-				<div class="registration-form__repeated-password form-row">
-					<label for="repeated-password" class="registration-form__repeated-password__label"
-						>Repeat password</label
-					>
-					<input
-						type="password"
-						name="repeated-password"
-						class="registration-form__repeated-password__input" />
-				</div>
-				<button type="submit" class="registration-form__button">Register</button>
-			</form>
+      <form class="registration-form pop-up-form">
+        <div class="registration-form__username form-row">
+          <label for="username" class="registration-form__username__label">Username</label>
+          <input type="text" name="username" class="registration-form__username__input" />
+        </div>
+        <div class="registration-form__password form-row">
+          <label for="password" class="registration-form__password__label">Password</label>
+          <input type="password" name="password" class="registration-form__password__input" />
+        </div>
+        <div class="registration-form__repeated-password form-row">
+          <label for="repeated-password" class="registration-form__repeated-password__label"
+            >Repeat password</label
+          >
+          <input
+            type="password"
+            name="repeated-password"
+            class="registration-form__repeated-password__input" />
+        </div>
+        <button type="submit" class="registration-form__button">Register</button>
+      </form>
 
-			<form class="login-form pop-up-form">
-				<div class="login-form__username form-row">
-					<label for="username" class="login-form__username__label">Username</label>
-					<input type="text" name="username" class="login-form__username__input" />
-				</div>
-				<div class="login-form__password form-row">
-					<label for="password" class="login-form__password__label">Password</label>
-					<input type="password" name="password" class="login-form__password__input" />
-				</div>
-				<button type="submit" class="login-form__button">Log in</button>
-			</form>
-		</main>
-	</body>
+      <form class="login-form pop-up-form">
+        <div class="login-form__username form-row">
+          <label for="username" class="login-form__username__label">Username</label>
+          <input type="text" name="username" class="login-form__username__input" />
+        </div>
+        <div class="login-form__password form-row">
+          <label for="password" class="login-form__password__label">Password</label>
+          <input type="password" name="password" class="login-form__password__input" />
+        </div>
+        <button type="submit" class="login-form__button">Log in</button>
+      </form>
+    </main>
+  </body>
 </html>
