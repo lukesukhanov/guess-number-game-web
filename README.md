@@ -22,6 +22,6 @@ Built with:
 <li>JavaScript</li>
 </ul>
 
-See also <a href="https://github.com/lukesukhanov/guess-number-game-api">the REST API part of this application</a>
+See also <a href="https://github.com/lukesukhanov/guess-number-game-api">REST API for this application</a>
 
 ![alt text](https://github.com/lukesukhanov/guess-number-game-frontend/blob/release-1.0/screenshot.png?raw=true)
