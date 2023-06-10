@@ -20,9 +20,7 @@ class PopUpLoginButton {
     const username = usernameInput.value.trim();
     const password = passwordInput.value;
     if (PopUpLoginButton.validateInput(usernameInput, passwordInput)) {
-      AuthorizationService.loginWithPassword(username, password).then(() =>
-        AuthorizationService.fetchCsrfToken()
-      );
+      AuthorizationService.loginWithPassword(username, password).then();
       popupBg.classList.remove("active");
       loginForm.classList.remove("active");
     }

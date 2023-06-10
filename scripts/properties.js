@@ -1,5 +1,6 @@
 /* URLs */
-export const API_URL = "http://127.0.0.1:8080/api";
+// export const API_URL = "http://192.168.99.100:8080";
+export const API_URL = "http://127.0.0.1:8080";
 export const LOGIN_API_URL = API_URL + "/login";
 export const FETCH_CSRF_TOKEN_API_URL = API_URL + "/csrfToken";
 export const LOGOUT_API_URL = API_URL + "/logout";
