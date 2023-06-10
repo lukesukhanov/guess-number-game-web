@@ -6,15 +6,10 @@ This application provides a frontend for the 'Guess my number' game.
 <p>
 The game is simple - the player has to guess a number from 1 to 50 with minimal count of attempts.<br />
 Information about players can be saved for the future.<br />
-Each player has the id, the username and the count of his best attempts.<br />
-  
-The player can:
-<ul>
-<li>register, login and logout using basic authentication;</li>
-<li>receive and save information about himself;</li>
-<li>receive information about players with the best result.</li>
-</ul>
-
+Each player has the id, the username and the count of his best attempts.
+<p>
+The player can also register, login and logout.
+<p>
 Built with:
 <ul>
 <li>HTML</li>
