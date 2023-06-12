@@ -113,7 +113,7 @@ class AuthorizationService {
       cache: "no-store",
       headers: {
         Accept: "application/json",
-        Authorization: btoa(username + ":" + password),
+        Registration: btoa(username + ":" + password),
       },
     });
   }

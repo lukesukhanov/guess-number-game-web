@@ -5,6 +5,7 @@ export const FETCH_CSRF_TOKEN_API_URL = API_URL + "/csrfToken";
 export const LOGOUT_API_URL = API_URL + "/logout";
 export const REGISTER_API_URL = API_URL + "/register";
 export const PLAYERS_API_URL = API_URL + "/players";
+export const PLAYERS_BY_USERNAME_API_URL = PLAYERS_API_URL + "/byUsername";
 export const PLAYERS_WITH_BEST_RESULT_URL = PLAYERS_API_URL + "/withBestResult";
 
 /* Header */
