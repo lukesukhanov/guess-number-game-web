@@ -1,12 +1,10 @@
-export { PopUpLoginButton };
-
 import { AuthorizationService } from "/scripts/services/authorization-service.js";
 import {
   POP_UP_FORM_DEFAULT_BORDER_COLOR,
   POP_UP_FORM_ERROR_BORDER_COLOR,
 } from "/scripts/properties.js";
 
-class PopUpLoginButton {
+export class PopUpLoginButton {
   constructor(element) {
     element.addEventListener("click", PopUpLoginButton.handleClick);
   }

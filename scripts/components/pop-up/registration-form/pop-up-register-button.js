@@ -1,11 +1,9 @@
-export { PopUpRegisterButton };
-
 import { AuthorizationService } from "/scripts/services/authorization-service.js";
 import {
   POP_UP_FORM_DEFAULT_BORDER_COLOR,
   POP_UP_FORM_ERROR_BORDER_COLOR,
 } from "/scripts/properties.js";
-class PopUpRegisterButton {
+export class PopUpRegisterButton {
   constructor(element) {
     element.addEventListener("click", PopUpRegisterButton.handleClick);
   }

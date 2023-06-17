@@ -1,6 +1,4 @@
-export { Player };
-
-class Player {
+export class Player {
   id;
   username;
   bestAttemptsCount;

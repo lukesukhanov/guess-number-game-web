@@ -1,5 +1,3 @@
-export { AuthorizationService };
-
 import { PlayerService } from "/scripts/services/player-service.js";
 import {
   LOGIN_API_URL,
@@ -8,7 +6,7 @@ import {
   REGISTER_API_URL,
 } from "/scripts/properties.js";
 
-class AuthorizationService {
+export class AuthorizationService {
   static async loginWithSessionCookie() {
     const response = await AuthorizationService.requestLoginWithSessionCookie();
     await AuthorizationService.handleLoginResponse(response);

@@ -1,12 +1,10 @@
-export { BestGlobalResult };
-
 import { PlayerService } from "/scripts/services/player-service.js";
 import {
   BEST_GLOBAL_RESULT_REFRESH_PERIOD,
   DEFAULT_BEST_GLOBAL_RESULT,
 } from "/scripts/properties.js";
 
-class BestGlobalResult {
+export class BestGlobalResult {
   static bestGlobalResultElement;
 
   constructor(element) {

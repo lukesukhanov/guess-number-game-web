@@ -1,6 +1,4 @@
-export { NewGameButton };
-
-class NewGameButton {
+export class NewGameButton {
   constructor(element) {
     element.addEventListener("click", NewGameButton.handleClick);
   }

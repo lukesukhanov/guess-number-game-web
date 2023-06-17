@@ -1,6 +1,4 @@
-export { GuessInput };
-
-class GuessInput {
+export class GuessInput {
   constructor(element) {
     element.addEventListener("keydown", GuessInput.handleKeydown);
   }
