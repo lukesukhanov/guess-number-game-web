@@ -44,7 +44,7 @@ export class PlayerService {
         responseBody.forEach(player => playersWithBestResult.push(player));
         return playersWithBestResult;
       case 404:
-        console.error(`Can't find player with best result`);
+        console.error("Can't find player with best result");
         return null;
     }
   }

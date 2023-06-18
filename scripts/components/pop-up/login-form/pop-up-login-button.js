@@ -11,37 +11,37 @@ export class PopUpLoginButton {
 
   static handleClick(event) {
     event.preventDefault();
-    const popupBg = document.querySelector(".pop-up-bg");
-    const loginForm = document.querySelector(".login-form");
-    const usernameInput = loginForm.elements["username"];
-    const passwordInput = loginForm.elements["password"];
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value;
-    if (PopUpLoginButton.validateInput(usernameInput, passwordInput)) {
+    const popupBgEl = document.querySelector(".pop-up-bg");
+    const loginFormEl = document.querySelector(".login-form");
+    const usernameInputEl = loginFormEl.elements["username"];
+    const passwordInputEl = loginFormEl.elements["password"];
+    const username = usernameInputEl.value.trim();
+    const password = passwordInputEl.value;
+    if (PopUpLoginButton.validateInput(usernameInputEl, passwordInputEl)) {
       AuthorizationService.loginWithPassword(username, password).then();
-      popupBg.classList.remove("active");
-      loginForm.classList.remove("active");
+      popupBgEl.classList.remove("active");
+      loginFormEl.classList.remove("active");
     }
   }
 
-  static validateInput(usernameInput, passwordInput) {
+  static validateInput(usernameInputEl, passwordInputEl) {
     let validInput = true;
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value;
+    const username = usernameInputEl.value.trim();
+    const password = passwordInputEl.value;
     if (username) {
-      usernameInput.style.borderColor = POP_UP_FORM_DEFAULT_BORDER_COLOR;
+      usernameInputEl.style.borderColor = POP_UP_FORM_DEFAULT_BORDER_COLOR;
     } else {
-      usernameInput.value = null;
-      usernameInput.style.borderColor = POP_UP_FORM_ERROR_BORDER_COLOR;
+      usernameInputEl.value = null;
+      usernameInputEl.style.borderColor = POP_UP_FORM_ERROR_BORDER_COLOR;
       validInput = false;
     }
     if (password) {
-      passwordInput.style.borderColor = POP_UP_FORM_DEFAULT_BORDER_COLOR;
+      passwordInputEl.style.borderColor = POP_UP_FORM_DEFAULT_BORDER_COLOR;
     } else {
-      passwordInput.style.borderColor = POP_UP_FORM_ERROR_BORDER_COLOR;
+      passwordInputEl.style.borderColor = POP_UP_FORM_ERROR_BORDER_COLOR;
       validInput = false;
     }
-    passwordInput.value = null;
+    passwordInputEl.value = null;
     return validInput;
   }
 }
