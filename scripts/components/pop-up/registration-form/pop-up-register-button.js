@@ -3,9 +3,9 @@ import {
   POP_UP_FORM_DEFAULT_BORDER_COLOR,
   POP_UP_FORM_ERROR_BORDER_COLOR,
 } from "/scripts/properties.js";
-export class PopUpRegisterButton {
+export class PopupRegisterButton {
   constructor(element) {
-    element.addEventListener("click", PopUpRegisterButton.handleClick);
+    element.addEventListener("click", PopupRegisterButton.handleClick);
   }
 
   static handleClick(event) {
@@ -18,7 +18,7 @@ export class PopUpRegisterButton {
     const username = usernameInputEl.value.trim();
     const password = passwordInputEl.value;
     if (
-      PopUpRegisterButton.validateInput(usernameInputEl, passwordInputEl, repeatedPasswordInputEl)
+      PopupRegisterButton.validateInput(usernameInputEl, passwordInputEl, repeatedPasswordInputEl)
     ) {
       AuthorizationService.register(username, password);
       popupBgEl.classList.remove("active");

@@ -1,8 +1,8 @@
 import { AuthorizationService } from "/scripts/services/authorization-service.js";
 
-export class LogOutRef {
+export class LogoutRef {
   constructor(element) {
-    element.addEventListener("click", LogOutRef.handleClick);
+    element.addEventListener("click", LogoutRef.handleClick);
   }
 
   static handleClick(event) {

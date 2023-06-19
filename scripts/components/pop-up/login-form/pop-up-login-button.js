@@ -4,9 +4,9 @@ import {
   POP_UP_FORM_ERROR_BORDER_COLOR,
 } from "/scripts/properties.js";
 
-export class PopUpLoginButton {
+export class PopupLoginButton {
   constructor(element) {
-    element.addEventListener("click", PopUpLoginButton.handleClick);
+    element.addEventListener("click", PopupLoginButton.handleClick);
   }
 
   static handleClick(event) {
@@ -17,7 +17,7 @@ export class PopUpLoginButton {
     const passwordInputEl = loginFormEl.elements["password"];
     const username = usernameInputEl.value.trim();
     const password = passwordInputEl.value;
-    if (PopUpLoginButton.validateInput(usernameInputEl, passwordInputEl)) {
+    if (PopupLoginButton.validateInput(usernameInputEl, passwordInputEl)) {
       AuthorizationService.loginWithPassword(username, password).then();
       popupBgEl.classList.remove("active");
       loginFormEl.classList.remove("active");

@@ -1,12 +1,12 @@
-export class PopUpBg {
+export class PopupBg {
   constructor(element) {
-    element.addEventListener("click", PopUpBg.handleClick);
+    element.addEventListener("click", PopupBg.handleClick);
   }
 
   static handleClick(event) {
     event.preventDefault();
-    const popUpForms = document.querySelectorAll(".pop-up-form");
-    popUpForms.forEach(form => form.classList.remove("active"));
+    const popupForms = document.querySelectorAll(".pop-up-form");
+    popupForms.forEach(form => form.classList.remove("active"));
     event.target.classList.remove("active");
   }
 }

@@ -5,9 +5,9 @@ export class LoginButton {
 
   static handleClick(event) {
     event.preventDefault();
-    const popUpBgEl = document.querySelector(".pop-up-bg");
-    const logInFormEl = document.querySelector(".login-form");
-    popUpBgEl.classList.add("active");
-    logInFormEl.classList.add("active");
+    const popupBgEl = document.querySelector(".pop-up-bg");
+    const loginFormEl = document.querySelector(".login-form");
+    popupBgEl.classList.add("active");
+    loginFormEl.classList.add("active");
   }
 }
