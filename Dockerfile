@@ -1,4 +1,4 @@
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
-COPY . $WORKDIR
+COPY ./dist $WORKDIR
 EXPOSE 80/tcp

@@ -1,4 +1,4 @@
-export class CheckButton {
+export default class CheckButton {
   constructor(element) {
     element.addEventListener("click", CheckButton.handleClick);
   }

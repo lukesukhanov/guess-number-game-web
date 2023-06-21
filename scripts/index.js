@@ -1,15 +1,15 @@
-import { NewGameButton } from "/scripts/components/header/new-game/new-game-button.js";
-import { LoginButton } from "/scripts/components/header/authorization/login-button.js";
-import { PopupLoginButton } from "/scripts/components/pop-up/login-form/pop-up-login-button.js";
-import { RegisterButton } from "/scripts/components/header/authorization/register-button.js";
-import { PopupRegisterButton } from "/scripts/components/pop-up/registration-form/pop-up-register-button.js";
-import { LogoutRef } from "/scripts/components/header/after-authorization/logout-ref.js";
-import { GuessInput } from "/scripts/components/main/guess/guess-input.js";
-import { CheckButton } from "/scripts/components/main/guess/check-button.js";
-import { BestGlobalResult } from "/scripts/components/main/statistics/best-global-result.js";
-import { PopupBg } from "/scripts/components/pop-up/pop-up-bg.js";
-import { Game } from "/scripts/game.js";
-import { AuthorizationService } from "/scripts/services/authorization-service.js";
+import NewGameButton from "/scripts/components/header/new-game/newGameButton.js";
+import LoginButton from "/scripts/components/header/authorization/loginButton.js";
+import PopupLoginButton from "/scripts/components/pop-up/login-form/popupLoginButton.js";
+import RegisterButton from "/scripts/components/header/authorization/registerButton.js";
+import PopupRegisterButton from "/scripts/components/pop-up/registration-form/popupRegisterButton.js";
+import LogoutRef from "/scripts/components/header/after-authorization/logoutRef.js";
+import GuessInput from "/scripts/components/main/guess/guessInput.js";
+import CheckButton from "/scripts/components/main/guess/checkButton.js";
+import BestGlobalResult from "/scripts/components/main/statistics/bestGlobalResult.js";
+import PopupBg from "/scripts/components/pop-up/popupBg.js";
+import Game from "/scripts/game.js";
+import AuthorizationService from "/scripts/services/authorizationService.js";
 
 window.game = new Game();
 window.game.reset();

@@ -1,4 +1,4 @@
-export class NewGameButton {
+export default class NewGameButton {
   constructor(element) {
     element.addEventListener("click", NewGameButton.handleClick);
   }

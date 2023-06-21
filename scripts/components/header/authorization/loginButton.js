@@ -1,4 +1,4 @@
-export class LoginButton {
+export default class LoginButton {
   constructor(element) {
     element.addEventListener("click", LoginButton.handleClick);
   }

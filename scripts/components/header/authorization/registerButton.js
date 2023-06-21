@@ -1,4 +1,4 @@
-export class RegisterButton {
+export default class RegisterButton {
   constructor(element) {
     element.addEventListener("click", RegisterButton.handleClick);
   }

@@ -1,4 +1,4 @@
-export class PopupBg {
+export default class PopupBg {
   constructor(element) {
     element.addEventListener("click", PopupBg.handleClick);
   }

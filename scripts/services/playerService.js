@@ -1,11 +1,11 @@
+import Player from "/scripts/player.js";
 import {
   PLAYERS_API_URL,
   PLAYERS_BY_USERNAME_API_URL,
   PLAYERS_WITH_BEST_RESULT_URL,
 } from "/scripts/properties.js";
-import { Player } from "/scripts/player.js";
 
-export class PlayerService {
+export default class PlayerService {
   static async getByUsername(username) {
     const url = PLAYERS_BY_USERNAME_API_URL + `?username=${username}`;
     const response = await fetch(url, {

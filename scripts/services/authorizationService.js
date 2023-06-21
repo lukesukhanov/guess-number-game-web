@@ -1,4 +1,4 @@
-import { PlayerService } from "/scripts/services/player-service.js";
+import PlayerService from "/scripts/services/playerService.js";
 import {
   LOGIN_API_URL,
   FETCH_CSRF_TOKEN_API_URL,
@@ -6,7 +6,7 @@ import {
   REGISTER_API_URL,
 } from "/scripts/properties.js";
 
-export class AuthorizationService {
+export default class AuthorizationService {
   static async loginWithSessionCookie() {
     const response = await AuthorizationService.requestLoginWithSessionCookie();
     await AuthorizationService.handleLoginResponse(response);

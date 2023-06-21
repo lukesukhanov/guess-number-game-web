@@ -1,9 +1,9 @@
-import { AuthorizationService } from "/scripts/services/authorization-service.js";
+import AuthorizationService from "/scripts/services/authorizationService.js";
 import {
   POP_UP_FORM_DEFAULT_BORDER_COLOR,
   POP_UP_FORM_ERROR_BORDER_COLOR,
 } from "/scripts/properties.js";
-export class PopupRegisterButton {
+export default class PopupRegisterButton {
   constructor(element) {
     element.addEventListener("click", PopupRegisterButton.handleClick);
   }

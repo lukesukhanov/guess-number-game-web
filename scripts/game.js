@@ -1,4 +1,4 @@
-import { PlayerService } from "/scripts/services/player-service.js";
+import PlayerService from "/scripts/services/playerService.js";
 import {
   DEFAULT_HEADER_BOTTOM_BORDER_COLOR,
   AFTER_WIN_HEADER_BOTTOM_BORDER_COLOR,
@@ -8,7 +8,7 @@ import {
   DEFAULT_STATISTICS_MESSAGE,
 } from "/scripts/properties.js";
 
-export class Game {
+export default class Game {
   secretNumber;
   attemptsCount;
   gameOver = false;
