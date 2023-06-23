@@ -21,7 +21,7 @@ class GameController {
     this.#gameOver = false;
     headerEl.classList.remove("win");
     secretNumberEl.textContent = "?";
-    secretNumberEl.remove("win");
+    secretNumberEl.classList.remove("win");
     guessInputEl.value = null;
     gameStateEl.textContent = "Start guessing...";
     attemptsCountEl.textContent = 0;
