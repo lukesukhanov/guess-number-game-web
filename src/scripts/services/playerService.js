@@ -2,7 +2,7 @@ import {
   PLAYERS_API_URL,
   PLAYERS_API_GET_BY_USERNAME_URL,
   PLAYERS_API_GET_WITH_BEST_RESULT_URL,
-} from "../properties.js";
+} from "../config.js";
 
 class Player {
   id;

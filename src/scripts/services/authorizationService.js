@@ -3,7 +3,7 @@ import {
   PLAYERS_API_CSRF_TOKEN_URL,
   PLAYERS_API_LOGOUT_URL,
   PLAYERS_API_REGISTRATION_URL,
-} from "../properties.js";
+} from "../config.js";
 
 class AuthorizationService {
   async loginWithSessionCookie() {

@@ -71,9 +71,9 @@ header.win {
 
 nav {
   position: absolute;
+  top: 2rem;
   left: 2rem;
   right: 2rem;
-  top: 2rem;
   display: flex;
   flex-direction: row;
 }
